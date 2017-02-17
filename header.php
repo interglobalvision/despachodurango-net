@@ -27,10 +27,10 @@
 
 <section id="main-container">
 
-<header id="header">
+<header id="header" class="container">
   <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
   <nav class="text-align-center">
-    <ul class="u-inline-list font-size-extra">
+    <ul class="u-inline-list">
       <li><a href="<?php echo home_url(); ?>">WORK</a></li>
       <li><a href="<?php echo home_url('/info'); ?>">INFO</a></li>
 <?php
@@ -47,7 +47,7 @@
   if (is_page('info')) {
 ?>
     <nav class="text-align-center">
-      <ul class="u-inline-list font-size-basic">
+      <ul class="u-inline-list">
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#clientes">CLIENTES</a></li>
         <li><a href="#servicios">SERVICIOS</a></li>
