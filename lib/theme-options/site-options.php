@@ -23,6 +23,12 @@ $metabox = array(
       'id'   => $prefix . 'shop_url',
       'type' => 'text',
     ),
+    array(
+      'name' => __( 'Durango Logo', 'IGV' ),
+      'desc' => __( '', 'IGV' ),
+      'id'   => $prefix . 'site_logo',
+      'type' => 'file',
+    ),
 
     // SOCIAL OPTIONS
 
