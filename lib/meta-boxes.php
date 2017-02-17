@@ -174,6 +174,19 @@ function igv_cmb_metaboxes() {
       'type'       => 'wysiwyg',
     ) );
 
+    // Contact meta
+    $contact_meta  = new_cmb2_box( array(
+      'id'            => $prefix . 'contact_metabox',
+      'title'         => esc_html__( 'Contact', 'cmb2' ),
+      'object_types'  => array( 'page', ), // Post type
+      'show_on'      => array( 'key' => 'id', 'value' => $about_page->ID),
+    ) );
+
+    $contact_group_id = $contact_meta->add_field( array(
+      'id'         => $prefix . 'contact',
+      'desc'       => esc_html__( '', 'cmb2' ),
+      'type'       => 'wysiwyg',
+    ) );
   }
 
 }
