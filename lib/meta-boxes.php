@@ -39,14 +39,14 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
 
-  $about_page = get_page_by_path('about');
+  $info_page = get_page_by_path('about');
 
-  if ($about_page) {
+  if ($info_page) {
     $team_meta  = new_cmb2_box( array(
       'id'            => $prefix . 'team_metabox',
       'title'         => esc_html__( 'Team', 'cmb2' ),
       'object_types'  => array( 'page', ), // Post type
-      'show_on'      => array( 'key' => 'id', 'value' => $about_page->ID),
+      'show_on'      => array( 'key' => 'id', 'value' => $info_page->ID),
     ) );
 
     $team_group_id = $team_meta->add_field( array(
@@ -79,7 +79,7 @@ function igv_cmb_metaboxes() {
       'id'            => $prefix . 'collaborators_metabox',
       'title'         => esc_html__( 'Collaborators', 'cmb2' ),
       'object_types'  => array( 'page', ), // Post type
-      'show_on'      => array( 'key' => 'id', 'value' => $about_page->ID),
+      'show_on'      => array( 'key' => 'id', 'value' => $info_page->ID),
     ) );
 
     $collaborator_group_id = $collaborators_meta->add_field( array(
@@ -118,7 +118,7 @@ function igv_cmb_metaboxes() {
       'id'            => $prefix . 'clients_metabox',
       'title'         => esc_html__( 'Clients', 'cmb2' ),
       'object_types'  => array( 'page', ), // Post type
-      'show_on'      => array( 'key' => 'id', 'value' => $about_page->ID),
+      'show_on'      => array( 'key' => 'id', 'value' => $info_page->ID),
     ) );
 
     $client_group_id = $clients_meta->add_field( array(
@@ -146,7 +146,7 @@ function igv_cmb_metaboxes() {
       'id'            => $prefix . 'services_metabox',
       'title'         => esc_html__( 'Services', 'cmb2' ),
       'object_types'  => array( 'page', ), // Post type
-      'show_on'      => array( 'key' => 'id', 'value' => $about_page->ID),
+      'show_on'      => array( 'key' => 'id', 'value' => $info_page->ID),
     ) );
 
     $service_group_id = $services_meta->add_field( array(
@@ -179,7 +179,7 @@ function igv_cmb_metaboxes() {
       'id'            => $prefix . 'contact_metabox',
       'title'         => esc_html__( 'Contact', 'cmb2' ),
       'object_types'  => array( 'page', ), // Post type
-      'show_on'      => array( 'key' => 'id', 'value' => $about_page->ID),
+      'show_on'      => array( 'key' => 'id', 'value' => $info_page->ID),
     ) );
 
     $contact_group_id = $contact_meta->add_field( array(
