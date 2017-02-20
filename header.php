@@ -27,6 +27,34 @@
 
 <section id="main-container">
 
-  <header id="header">
-    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+<header id="header" class="container font-uppercase">
+  <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
+  <nav class="text-align-center">
+    <ul class="u-inline-list">
+      <li><a href="<?php echo home_url(); ?>">Work</a></li>
+      <li><a href="<?php echo home_url('/info'); ?>">Info</a></li>
+<?php
+  $shop_url = IGV_get_option('_igv_site_options', '_igv_shop_url');
+  if (!empty($shop_url)) {
+?>
+      <li><a href=<?php echo esc_url($shop_url); ?>>Shop</a></li>
+<?php
+  }
+?>
+      </ul>
+    </nav>
+<?php
+  if (is_page('info')) {
+?>
+    <nav class="text-align-center">
+      <ul class="u-inline-list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#clientes">Clientes</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+<?php
+  }
+?>
   </header>

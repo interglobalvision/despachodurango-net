@@ -12,6 +12,27 @@ $metabox = array(
   'show_names' => true,
   'fields'     => array(
     array(
+      'name' => __( 'General Options', 'cmb2' ),
+      'desc' => __( '', 'cmb2' ),
+      'id'   => $prefix . 'general_options',
+      'type' => 'title',
+    ),
+    array(
+      'name' => __( 'Shop URL', 'IGV' ),
+      'desc' => __( '', 'IGV' ),
+      'id'   => $prefix . 'shop_url',
+      'type' => 'text',
+    ),
+    array(
+      'name' => __( 'Durango Logo', 'IGV' ),
+      'desc' => __( '', 'IGV' ),
+      'id'   => $prefix . 'site_logo',
+      'type' => 'file',
+    ),
+
+    // SOCIAL OPTIONS
+
+    array(
       'name' => __( 'Social Media', 'cmb2' ),
       'desc' => __( 'urls and accounts for different social media platforms. For use in menus and metadata', 'cmb2' ),
       'id'   => $prefix . 'socialmedia_title',
@@ -76,29 +97,6 @@ $metabox = array(
       'desc' => __( '(optional)', 'IGV' ),
       'id'   => $prefix . 'google_analytics_id',
       'type' => 'text',
-    ),
-
-    // BOILER
-
-    array(
-      'name' => __( 'Title for options section', 'cmb2' ),
-      'desc' => __( '', 'cmb2' ),
-      'id'   => $prefix . 'general_title',
-      'type' => 'title',
-    ),
-    array(
-      'name' => __( 'Test Text', 'IGV' ),
-      'desc' => __( 'field description (optional)', 'IGV' ),
-      'id'   => $prefix . 'test_text',
-      'type' => 'text',
-      'default' => 'Default Text',
-    ),
-    array(
-      'name'    => __( 'Test Color Picker', 'IGV' ),
-      'desc'    => __( 'field description (optional)', 'IGV' ),
-      'id'      => $prefix . 'test_colorpicker',
-      'type'    => 'colorpicker',
-      'default' => '#bada55',
     )
   )
 );
