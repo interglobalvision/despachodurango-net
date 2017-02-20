@@ -27,17 +27,17 @@
 
 <section id="main-container">
 
-<header id="header" class="container">
+<header id="header" class="container font-uppercase">
   <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
   <nav class="text-align-center">
     <ul class="u-inline-list">
-      <li><a href="<?php echo home_url(); ?>">WORK</a></li>
-      <li><a href="<?php echo home_url('/info'); ?>">INFO</a></li>
+      <li><a href="<?php echo home_url(); ?>">Work</a></li>
+      <li><a href="<?php echo home_url('/info'); ?>">Info</a></li>
 <?php
   $shop_url = IGV_get_option('_igv_site_options', '_igv_shop_url');
   if (!empty($shop_url)) {
 ?>
-      <li><a href=<?php echo esc_url($shop_url); ?>>SHOP</a></li>
+      <li><a href=<?php echo esc_url($shop_url); ?>>Shop</a></li>
 <?php
   }
 ?>
@@ -48,10 +48,10 @@
 ?>
     <nav class="text-align-center">
       <ul class="u-inline-list">
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#clientes">CLIENTES</a></li>
-        <li><a href="#servicios">SERVICIOS</a></li>
-        <li><a href="#contacto">CONTACTO</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#clientes">Clientes</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
 <?php
