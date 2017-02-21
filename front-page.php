@@ -36,12 +36,13 @@ if( have_posts() ) {
             $work_image = wp_get_attachment_image($work['image_id'], 'home-work', array('class'=>'home-work-image'));
           }
 
+          $work_url = get_the_permalink($work['work_id']);
           $work_title = get_the_title($work['work_id']);
           $work_cats = get_the_category($work['work_id']);
 
 ?>
 
-          <div class="home-work-item">
+          <a class="home-work-item" href="<?php echo $work_url; ?>">
             <?php echo $work_image; ?>
             <div class="home-work-details grid-column text-align-center justify-around align-items-center">
               <h2><?php echo $work_title; ?></h2>
@@ -55,7 +56,7 @@ if( have_posts() ) {
                 }
               ?>
             </div>
-          </div>
+          </a>
 
 <?php
         }
