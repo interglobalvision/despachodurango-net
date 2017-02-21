@@ -20,7 +20,7 @@ if( have_posts() ) {
           <div class="grid-row">
 
             <div class="grid-item item-s-4 font-uppercase">
-              <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+              <h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 <?php
     if (!empty($cats)) {
 ?>

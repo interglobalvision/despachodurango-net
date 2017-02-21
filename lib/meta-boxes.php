@@ -39,6 +39,48 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
 
+  // Home post-type meta
+  $home_page = get_page_by_path('home');
+
+  $home_meta = new_cmb2_box( array(
+   'id'            => $prefix . 'home_meta',
+   'title'         => esc_html__( 'Home Metabox', 'cmb2' ),
+   'object_types'  => array( 'page', ), // Post type
+   'show_on'      => array( 'key' => 'id', 'value' => $home_page->ID),
+  ) );
+
+  $home_work_group = $home_meta->add_field( array(
+    'id'         => $prefix . 'home_work_group',
+    'desc'       => esc_html__( 'Display and position Work thumbnails', 'cmb2' ),
+    'type'       => 'group',
+    'options'     => array(
+      'group_title'   => __( 'Work {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+      'add_button'    => __( 'Add Another Work', 'cmb2' ),
+      'remove_button' => __( 'Remove Work', 'cmb2' ),
+      'sortable'      => true, // beta
+      // 'closed'     => true, // true to have the groups closed by default
+    ),
+  ) );
+
+  $home_meta->add_group_field( $home_work_group, array(
+    'name'             => __( 'Work', 'cmb2' ),
+    'id'               => 'work_id',
+    'type'             => 'select',
+    'show_option_none' => true,
+    'options'          => get_post_objects(array(
+      'post_type'       => 'work',
+      'posts_per_page'  => -1,
+    )),
+  ) );
+
+  $home_meta->add_group_field( $home_work_group, array(
+    'name' => __( 'Image', 'cmb2' ),
+    'desc'       => esc_html__( 'Optional. Defaults to Featured Image', 'cmb2' ),
+    'id'   => 'image',
+    'type' => 'file',
+    'preview_size' => array(150,150),
+  ) );
+
   // Work post-type meta
   $work_meta = new_cmb2_box( array(
     'id'            => $prefix . 'work_meta',
@@ -61,7 +103,7 @@ function igv_cmb_metaboxes() {
   $info_page = get_page_by_path('info');
 
   if ($info_page) {
-    
+
     // Team meta
     $team_meta  = new_cmb2_box( array(
       'id'            => $prefix . 'team_metabox',
