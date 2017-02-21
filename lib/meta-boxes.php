@@ -132,6 +132,13 @@ function igv_cmb_metaboxes() {
     ) );
 
     $team_meta->add_group_field($team_group_id, array(
+      'name'       => esc_html__( 'Description', 'cmb2' ),
+      'id'         => $prefix . 'teammate_description',
+      'type'       => 'wysiwyg',
+    ) );
+
+
+    $team_meta->add_group_field($team_group_id, array(
       'name'       => esc_html__( 'Picture', 'cmb2' ),
       'id'         => $prefix . 'teammate_picture',
       'type'       => 'file',
