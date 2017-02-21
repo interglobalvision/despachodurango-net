@@ -6,8 +6,13 @@
       "email": "globie@interglobal.vision"
     }
   ],
+  "repositories": [{
+    "type": "vcs",
+    "url": "https://github.com/interglobalvision/cmb-field-gallery.git"
+  }],
   "require": {
     "webdevstudios/cmb2": "*",
-    "fightbulc/moment": "*"
+    "fightbulc/moment": "*",
+    "interglobalvision/cmb-field-gallery": "dev-master"
   }
 }
