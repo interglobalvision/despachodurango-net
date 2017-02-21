@@ -39,5 +39,22 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
 
+  $work_meta = new_cmb2_box( array(
+    'id'            => $prefix . 'work_meta',
+    'title'         => esc_html__( 'Work Metabox', 'cmb2' ),
+    'object_types'  => array( 'work', ), // Post type
+  ) );
+
+  $work_meta->add_field( array(
+    'name' => 'Gallery Images',
+    'desc' => 'Upload and manage gallery images',
+    'button' => 'Manage gallery', // Optionally set button label
+    'clear-button' => 'Clear gallery', // Optionally set clear button label
+    'id'   => $prefix . 'work_gallery',
+    'type' => 'pw_gallery',
+    'preview_size' => array( 150, 150 ), // Set the size of the thumbnails
+    'sanitization_cb' => 'pw_gallery_field_sanitise', // REQUIRED
+  ) );
+
 }
 ?>
