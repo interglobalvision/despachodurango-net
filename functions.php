@@ -50,7 +50,14 @@ register_nav_menus( array(
 function cmb_initialize_cmb_meta_boxes() {
   if (!class_exists( 'cmb2_bootstrap_202' ) ) {
     require_once 'vendor/webdevstudios/cmb2/init.php';
+
+    // Init gallery field
+    if ( ! defined( 'PW_GALLERY_URL' ) ) {
+      define( 'PW_GALLERY_URL', get_stylesheet_directory_uri() . '/vendor/interglobalvision/cmb-field-gallery/' );
+    }
+    require_once 'vendor/interglobalvision/cmb-field-gallery/cmb-field-gallery.php';
   }
+
 }
 add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 11 );
 

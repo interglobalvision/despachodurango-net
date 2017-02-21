@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d4280bdba8cabd9a9e5ac9223f2c1073",
-    "content-hash": "42678f5f0d51676508b46b24bf32e2d9",
+    "content-hash": "3ddb330d97ae357e20d2077342b8af16",
     "packages": [
         {
             "name": "fightbulc/moment",
@@ -68,7 +67,55 @@
                 "translation",
                 "validate"
             ],
-            "time": "2017-01-19 07:57:28"
+            "time": "2017-01-19T07:57:28+00:00"
+        },
+        {
+            "name": "interglobalvision/cmb-field-gallery",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/interglobalvision/cmb-field-gallery.git",
+                "reference": "7bdbf8ad56c6ffcc5fd4c6b55a2d6dd850d02211"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/interglobalvision/cmb-field-gallery/zipball/7bdbf8ad56c6ffcc5fd4c6b55a2d6dd850d02211",
+                "reference": "7bdbf8ad56c6ffcc5fd4c6b55a2d6dd850d02211",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">5.2.4",
+                "webdevstudios/cmb2": "*"
+            },
+            "suggest": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "mustardBees",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Interglobal Vision",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Gallery field type for CMB2.",
+            "homepage": "https://github.com/interglobalvision/cmb-field-gallery",
+            "keywords": [
+                "metabox",
+                "plugin",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/mustardBees/cmb-field-gallery/issues",
+                "source": "https://github.com/mustardBees/cmb-field-gallery"
+            },
+            "time": "2017-02-20 23:37:56"
         },
         {
             "name": "webdevstudios/cmb2",
@@ -113,13 +160,15 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2016-11-08 15:24:55"
+            "time": "2016-11-08T15:24:55+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "interglobalvision/cmb-field-gallery": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

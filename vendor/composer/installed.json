@@ -23,7 +23,7 @@
         "suggest": {
             "composer/installers": "~1.0"
         },
-        "time": "2016-11-08 15:24:55",
+        "time": "2016-11-08T15:24:55+00:00",
         "type": "wordpress-plugin",
         "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",
@@ -67,7 +67,7 @@
         "require-dev": {
             "phpunit/phpunit": "4.2.*"
         },
-        "time": "2017-01-19 07:57:28",
+        "time": "2017-01-19T07:57:28+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -110,5 +110,55 @@
             "translation",
             "validate"
         ]
+    },
+    {
+        "name": "interglobalvision/cmb-field-gallery",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/interglobalvision/cmb-field-gallery.git",
+            "reference": "7bdbf8ad56c6ffcc5fd4c6b55a2d6dd850d02211"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/interglobalvision/cmb-field-gallery/zipball/7bdbf8ad56c6ffcc5fd4c6b55a2d6dd850d02211",
+            "reference": "7bdbf8ad56c6ffcc5fd4c6b55a2d6dd850d02211",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">5.2.4",
+            "webdevstudios/cmb2": "*"
+        },
+        "suggest": {
+            "composer/installers": "~1.0"
+        },
+        "time": "2017-02-20T23:37:56+00:00",
+        "type": "wordpress-plugin",
+        "installation-source": "source",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "mustardBees",
+                "role": "Developer"
+            },
+            {
+                "name": "Interglobal Vision",
+                "role": "Maintainer"
+            }
+        ],
+        "description": "Gallery field type for CMB2.",
+        "homepage": "https://github.com/interglobalvision/cmb-field-gallery",
+        "keywords": [
+            "metabox",
+            "plugin",
+            "wordpress"
+        ],
+        "support": {
+            "issues": "https://github.com/mustardBees/cmb-field-gallery/issues",
+            "source": "https://github.com/mustardBees/cmb-field-gallery"
+        }
     }
 ]
