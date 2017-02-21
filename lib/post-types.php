@@ -53,7 +53,8 @@ function register_cpt_work() {
         'query_var' => true,
         'can_export' => true,
         'rewrite' => true,
-        'capability_type' => 'post'
+        'capability_type' => 'post',
+        'taxonomies' => array( 'category' ),
     );
 
     register_post_type( 'work', $args );
