@@ -61,7 +61,7 @@ function igv_cmb_metaboxes() {
   $info_page = get_page_by_path('info');
 
   if ($info_page) {
-    
+
     // Team meta
     $team_meta  = new_cmb2_box( array(
       'id'            => $prefix . 'team_metabox',
@@ -88,6 +88,13 @@ function igv_cmb_metaboxes() {
       'id'         => $prefix . 'teammate_name',
       'type'       => 'text',
     ) );
+
+    $team_meta->add_group_field($team_group_id, array(
+      'name'       => esc_html__( 'Description', 'cmb2' ),
+      'id'         => $prefix . 'teammate_description',
+      'type'       => 'wysiwyg',
+    ) );
+
 
     $team_meta->add_group_field($team_group_id, array(
       'name'       => esc_html__( 'Picture', 'cmb2' ),
