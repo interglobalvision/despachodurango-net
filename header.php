@@ -30,7 +30,7 @@
 <header id="header" class="container font-uppercase">
   <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
   <nav class="text-align-center">
-    <ul class="u-inline-list">
+    <ul class="u-inline-list font-din">
       <li><a href="<?php echo home_url(); ?>">Work</a></li>
       <li><a href="<?php echo home_url('/info'); ?>">Info</a></li>
 <?php

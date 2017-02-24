@@ -719,6 +719,9 @@ p {
 .font-bold {
   font-weight: bold;
 }
+.font-lighter {
+  font-weight: lighter;
+}
 .font-small-caps {
   text-transform: uppercase;
   font-size: 0.85em;
@@ -753,11 +756,31 @@ p a {
   text-decoration: underline;
 }
 @font-face {
-  font-family: 'DinBlack';
-  src: url("fonts/DinBlack/DinBlack.eot");
-  src: url("fonts/DinBlack/DinBlack.eot?#iefix") format('embedded-opentype'), url("fonts/DinBlack/DinBlack.woff") format('woff'), url("fonts/DinBlack/DinBlack.ttf") format('truetype');
+  font-family: 'Din';
+  src: url("fonts/Din/subset-DINPro-Light.eot");
+  src: url("fonts/Din/subset-DINPro-Light.eot?#iefix") format('embedded-opentype'), url("fonts/Din/subset-DINPro-Light.woff2") format('woff2'), url("fonts/Din/subset-DINPro-Light.woff") format('woff'), url("fonts/Din/subset-DINPro-Light.ttf") format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Din';
+  src: url("fonts/Din/DINPro-Bold.eot");
+  src: url("fonts/Din/DINPro-Bold.eot?#iefix") format('embedded-opentype'), url("fonts/Din/DINPro-Bold.woff2") format('woff2'), url("fonts/Din/DINPro-Bold.woff") format('woff'), url("fonts/Din/DINPro-Bold.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+@font-face {
+  font-family: 'AlverataInformal';
+  src: url("fonts/AlverataInformal/AlverataInformalW01-Bold.eot");
+  src: url("fonts/AlverataInformal/AlverataInformalW01-Bold.eot?#iefix") format('embedded-opentype'), url("fonts/AlverataInformal/AlverataInformalW01-Bold.woff") format('woff'), url("fonts/AlverataInformal/AlverataInformalW01-Bold.ttf") format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+.font-din {
+  font-family: 'Din';
+}
+.font-alverata {
+  font-family: 'AlverataInformal';
 }
 html {
   background-color: #fff;
