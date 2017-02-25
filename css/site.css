@@ -699,7 +699,7 @@ html {
   letter-spacing: 0.001em;
 }
 body {
-  line-height: 1.35;
+  line-height: 1.7;
 }
 p {
   margin-bottom: 1rem;
@@ -710,8 +710,20 @@ p {
 .font-serif {
   font-family: Georgia, Times, "Times New Roman", serif;
 }
+.font-h1 {
+  font-size: 1.4rem;
+}
+.font-h2 {
+  font-size: 1.2rem;
+}
+.font-large {
+  font-size: 1.6rem;
+}
 .font-larger {
-  font-size: 1.3rem;
+  font-size: 3.4rem;
+}
+.font-massive {
+  font-size: 10rem;
 }
 .font-italic {
   font-style: italic;
@@ -764,8 +776,8 @@ p a {
 }
 @font-face {
   font-family: 'Din';
-  src: url("fonts/Din/DINPro-Bold.eot");
-  src: url("fonts/Din/DINPro-Bold.eot?#iefix") format('embedded-opentype'), url("fonts/Din/DINPro-Bold.woff2") format('woff2'), url("fonts/Din/DINPro-Bold.woff") format('woff'), url("fonts/Din/DINPro-Bold.ttf") format('truetype');
+  src: url("fonts/Din/DINPro-Black.eot");
+  src: url("fonts/Din/DINPro-Black.eot?#iefix") format('embedded-opentype'), url("fonts/Din/DINPro-Black.woff2") format('woff2'), url("fonts/Din/DINPro-Black.woff") format('woff'), url("fonts/Din/DINPro-Black.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -1055,19 +1067,7 @@ img {
   padding-bottom: 70px;
 }
 html {
-  font-size: 12px;
-}
-h1,
-.font-size-h1 {
-  font-size: 28px;
-}
-h2,
-.font-size-h2 {
-  font-size: 21px;
-}
-h3,
-.font-size-h3 {
-  font-size: 16px;
+  font-size: 14px;
 }
 @media screen and (min-width: 720px) {
   .margin-top-micro {
