@@ -1,4 +1,4 @@
-<nav class="grid-row font-family-heading font-massive font-uppercase">
+<nav class="grid-row font-family-heading font-size-massive font-uppercase">
   <div class="grid-item item-m-6">
     <?php previous_post_link('%link', 'prev'); ?>
   </div>
