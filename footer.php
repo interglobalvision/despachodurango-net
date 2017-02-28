@@ -12,7 +12,7 @@
 <?php
   }
 ?>
-      <div class="grid-item item-s-6 font-heading font-lighter font-larger">
+      <div class="grid-item item-s-6 font-family-heading font-lighter font-larger">
         COPYRIGHT <?php echo date('Y'); ?>
       </div>
     </div>
