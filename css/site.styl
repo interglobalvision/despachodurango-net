@@ -9,7 +9,6 @@
 
 meyer-reset()
 box-sizing-reset()
-normalize()
 
 // ******************************************************
 
@@ -73,7 +72,7 @@ grid(96%, $gutter, s)
 
 space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
 
-font-sizes($font-size-basic)
+font-sizes($font-size-basic, .65)
 
 @import 'responsive/mobile'
 
@@ -94,7 +93,7 @@ font-sizes($font-size-basic)
 
   grid(680px, $gutter, m)
 
-  font-size($font-size-basic)
+  font-sizes($font-size-basic, .7)
 
   .mobile-only
     display: none !important
@@ -118,7 +117,7 @@ font-sizes($font-size-basic)
 
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
 
-  font-size($font-size-basic)
+  font-sizes($font-size-basic, .9)
 
   .desktop-only
     display: initial !important
@@ -126,6 +125,8 @@ font-sizes($font-size-basic)
   @import 'responsive/desktop'
 
 @media screen and (min-width: 1280px)
+
+  font-sizes($font-size-basic)
 
   grid(1200px)
 

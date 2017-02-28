@@ -24,13 +24,6 @@ $font-serif = font-stack('AlverataInformal')
 // ******************************************************
 // VARIABLES
 
-$font-h1 = 1.4rem
-$font-h2 = 1.2rem
-
-$font-size-large = 1.6rem
-$font-size-larger = 3.4rem
-$font-size-massive = 10rem
-
 $font-leading-basic = 1.70
 $font-leading-tighter = 1.15
 $font-leading-larger = 1.45
@@ -62,22 +55,6 @@ p
 
 .font-heading
   font-family: $font-heading
-
-
-.font-h1
-  font-size: $font-h1
-
-.font-h2
-  font-size: $font-h2
-
-.font-large
-  font-size: $font-size-large
-
-.font-larger
-  font-size: $font-size-larger
-
-.font-massive
-  font-size: $font-size-massive
 
 .font-italic
   font-style: italic
@@ -124,31 +101,35 @@ p
   a
     text-decoration: underline
 
-font-sizes($size-basic = 15px, $size-h1 = false, $size-h2 = false, $size-h3 = false, $size-h4 = false, $size-h5 = false, $size-h6 = false)
+font-sizes($size-basic = 15px, $modulator = 1)
 
   html
     font-size: $size-basic
 
-  if ($size-h1)
-    h1, .font-size-h1
-      font-size: $size-h1
+  $size-heading-small = $size-basic * (1.2 * $modulator)
+  $size-heading = $size-basic * (1.5 * $modulator)
+  $size-large = $size-basic * (1.6 * $modulator)
+  $size-larger = $size-basic * (3.5 * $modulator)
+  $size-massive = $size-basic * (10 * $modulator)
 
-  if ($size-h2)
-    h2, .font-size-h2
-      font-size: $size-h2
+  .font-size-heading-small
+    if $size-heading-small > ($size-basic + 1px)
+      font-size: $size-heading-small
+    else
+      font-size: ($size-basic + 1px)
 
-  if ($size-h3)
-    h3, .font-size-h3
-      font-size: $size-h3
+  .font-size-heading
+    if $size-heading > ($size-basic + 1px)
+      font-size: $size-heading
+    else
+      font-size: ($size-basic + 1px)
 
-  if ($size-h4)
-    h4, .font-size-h4
-      font-size: $size-h4
+  .font-large
+    font-size: $size-large
 
-  if ($size-h5)
-    h5, .font-size-h5
-      font-size: $size-h5
+  .font-larger
+    font-size: $size-larger
 
-  if ($size-h6)
-    h6, .font-size-h6
-      font-size: $size-h6
+  .font-massive
+    font-size: $size-massive
+
