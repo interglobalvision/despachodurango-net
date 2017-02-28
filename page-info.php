@@ -19,7 +19,7 @@ if( have_posts() ) {
 ?>
       <section class="grid-row">
         <div class="grid-item item-m-4">
-          <h2 class="font-din font-uppercase font-h1">About</h2>
+          <h2 class="font-heading font-uppercase font-h1">About</h2>
         </div>
         <div class="grid-item item-m-8">
           <?php the_content(); ?>
@@ -40,7 +40,7 @@ if( have_posts() ) {
       ?>
         <div class="grid-item item-m-4">
           <?php echo $teammate_picture; ?>
-          <h3 class="font-din font-uppercase font-h2"><?php echo $teammate_name; ?></h3>
+          <h3 class="font-heading font-uppercase font-h2"><?php echo $teammate_name; ?></h3>
           <?php echo $teammate_description; ?>
         </div>
       <?php
@@ -58,7 +58,7 @@ if( have_posts() ) {
     ?>
       <section>
         <div class="grid-item item-m-4">
-          <h2 class="font-din font-uppercase font-h1">Colaboradores</h2>
+          <h2 class="font-heading font-uppercase font-h1">Colaboradores</h2>
           <ul>
 
       <?php
@@ -69,7 +69,7 @@ if( have_posts() ) {
       ?>
             <li>
               <p><?php echo $collaborator_picture; ?></p>
-              <h3 class="font-din font-h2"><?php echo $collaborator_name; ?></h3>
+              <h3 class="font-heading font-h2"><?php echo $collaborator_name; ?></h3>
               <p><?php echo $collaborator_role; ?></p>
             </li>
       <?php
@@ -89,7 +89,7 @@ if( have_posts() ) {
     ?>
       <section class="grid-row">
         <div class="grid-item item-m-4">
-          <h2 class="font-din font-uppercase font-h1">Clientes</h2>
+          <h2 class="font-heading font-uppercase font-h1">Clientes</h2>
         </div>
         <div class="grid-item item-m-8">
           <ul>
@@ -116,7 +116,7 @@ if( have_posts() ) {
     ?>
       <section class="grid-row">
         <div class="grid-item item-m-4">
-          <h2 class="font-din font-uppercase font-h1">Servicios</h2>
+          <h2 class="font-heading font-uppercase font-h1">Servicios</h2>
         </div>
         <div class="grid-item item-m-8">
           <ul>
@@ -127,7 +127,7 @@ if( have_posts() ) {
         $service_description = $service['_igv_service_description'];
       ?>
             <li>
-              <h3 class="font-din font-uppercase font-h2"><?php echo $service_name; ?></h3>
+              <h3 class="font-heading font-uppercase font-h2"><?php echo $service_name; ?></h3>
               <p><?php echo $service_description; ?></p>
             </li>
       <?php
@@ -147,7 +147,7 @@ if( have_posts() ) {
     ?>
       <section class="grid-row">
         <div class="grid-item item-m-12">
-          <h2 class="font-din font-uppercase font-h1">Contacto</h2>
+          <h2 class="font-heading font-uppercase font-h1">Contacto</h2>
         <?php
         echo apply_filters('the_content', $contact);
         ?>

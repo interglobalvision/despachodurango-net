@@ -15,7 +15,7 @@ if( have_posts() ) {
 ?>
 
         <article <?php post_class('grid-row justify-center'); ?> id="post-<?php the_ID(); ?>">
-          <div class="grid-item item-s-6 text-align-center font-alverata font-large">
+          <div class="grid-item item-s-6 text-align-center font-serif font-large">
             <?php the_content(); ?>
           </div>
         </article>
