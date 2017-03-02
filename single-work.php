@@ -20,7 +20,7 @@ if( have_posts() ) {
           <div class="grid-row">
 
             <div class="grid-item item-s-4 font-uppercase">
-              <h1 class="font-family-heading"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
+              <h1 class="font-family-heading font-size-heading-small"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 <?php
     if (!empty($cats)) {
 ?>
@@ -54,7 +54,7 @@ if( have_posts() ) {
 ?>
             <div class="grid-item item-s-12 work-gallery-image">
               <?php echo $image; ?>
-              <div class="text-align-center"><?php echo $caption; ?><div>
+              <div class="text-align-center"><?php echo $caption; ?></div>
             </div>
 <?php
       }
