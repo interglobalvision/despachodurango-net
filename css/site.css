@@ -1411,45 +1411,53 @@ html {
     padding-bottom: 120px;
   }
   html {
-    font-size: 16px;
+    font-size: 15px;
   }
   .font-size-heading-small {
-    font-size: 17.28px;
+    font-size: 16.200000000000003px;
   }
   .font-size-heading {
-    font-size: 21.6px;
+    font-size: 20.25px;
   }
   .font-size-large {
-    font-size: 23.040000000000003px;
+    font-size: 21.6px;
   }
   .font-size-larger {
-    font-size: 50.4px;
+    font-size: 47.25px;
   }
   .font-size-massive {
-    font-size: 144px;
+    font-size: 135px;
   }
   .desktop-only {
     display: initial !important;
   }
+  #work-content {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 24px;
+    -moz-column-gap: 24px;
+    column-gap: 24px;
+  }
 }
 @media screen and (min-width: 1280px) {
   html {
-    font-size: 14px;
+    font-size: 15px;
   }
   .font-size-heading-small {
-    font-size: 16.8px;
+    font-size: 18px;
   }
   .font-size-heading {
-    font-size: 21px;
+    font-size: 22.5px;
   }
   .font-size-large {
-    font-size: 22.400000000000002px;
+    font-size: 24px;
   }
   .font-size-larger {
-    font-size: 49px;
+    font-size: 52.5px;
   }
   .font-size-massive {
-    font-size: 140px;
+    font-size: 150px;
   }
   .container {
     width: 1200px;
