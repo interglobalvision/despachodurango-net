@@ -14,8 +14,8 @@ if( have_posts() ) {
     $works = get_post_meta($post->ID, '_igv_home_work_group', true);
 ?>
 
-        <article <?php post_class('grid-row'); ?> id="post-<?php the_ID(); ?>">
-          <div class="grid-item item-s-12 text-align-center">
+        <article <?php post_class('grid-row justify-center'); ?> id="post-<?php the_ID(); ?>">
+          <div class="grid-item item-s-6 text-align-center font-serif font-size-large">
             <?php the_content(); ?>
           </div>
         </article>

@@ -9,7 +9,6 @@
 
 meyer-reset()
 box-sizing-reset()
-normalize()
 
 // ******************************************************
 
@@ -67,16 +66,13 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
-$font-size-basic = 12px
-$font-size-h1 = 28px
-$font-size-h2 = 21px
-$font-size-h3 = 16px
+$font-size-basic = 14px
 
 grid(96%, $gutter, s)
 
 space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
 
-font-sizes($font-size-basic, $font-size-h1, $font-size-h2, $font-size-h3)
+font-sizes($font-size-basic, .65)
 
 @import 'responsive/mobile'
 
@@ -97,7 +93,7 @@ font-sizes($font-size-basic, $font-size-h1, $font-size-h2, $font-size-h3)
 
   grid(680px, $gutter, m)
 
-  font-size($font-size-basic)
+  font-sizes($font-size-basic, .7)
 
   .mobile-only
     display: none !important
@@ -121,7 +117,7 @@ font-sizes($font-size-basic, $font-size-h1, $font-size-h2, $font-size-h3)
 
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
 
-  font-size($font-size-basic)
+  font-sizes($font-size-basic, .9)
 
   .desktop-only
     display: initial !important
@@ -129,6 +125,8 @@ font-sizes($font-size-basic, $font-size-h1, $font-size-h2, $font-size-h3)
   @import 'responsive/desktop'
 
 @media screen and (min-width: 1280px)
+
+  font-sizes($font-size-basic)
 
   grid(1200px)
 

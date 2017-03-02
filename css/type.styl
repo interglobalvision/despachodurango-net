@@ -1,9 +1,12 @@
 // FONTS
+@import 'fonts/Din/Din'
+@import 'fonts/AlverataInformal/AlverataInformal'
 
 // declare font families here
-  
+
 $font-sans = font-stack('Helvetica');
-$font-serif = font-stack('Georgia');
+$font-family-heading = font-stack('Din')
+$font-serif = font-stack('AlverataInformal')
 
 // ******************************************************
 
@@ -19,12 +22,9 @@ $font-serif = font-stack('Georgia');
 // @import "fonts/icons/materialize"
 
 // ******************************************************
-
 // VARIABLES
 
-$font-size-larger = 1.3rem
-
-$font-leading-basic = 1.35
+$font-leading-basic = 1.70
 $font-leading-tighter = 1.15
 $font-leading-larger = 1.45
 
@@ -41,26 +41,29 @@ html
 
 body
   line-height: $font-leading-basic
-  
+
 p
   margin-bottom: 1rem
-  
+
 // FONT RULES
-  
+
 .font-sans
   font-family: $font-sans
-  
+
 .font-serif
   font-family: $font-serif
-  
-.font-larger
-  font-size: $font-size-larger
+
+.font-family-heading
+  font-family: $font-family-heading
 
 .font-italic
   font-style: italic
 
 .font-bold
   font-weight: bold
+
+.font-lighter
+  font-weight: lighter
 
 .font-small-caps
   text-transform: uppercase
@@ -77,7 +80,7 @@ p
 .text-overflow-ellipsis
   overflow: ellipsis
 
-.text-align-left  
+.text-align-left
   text-align: left
 
 .text-align-right
@@ -93,36 +96,40 @@ a:active,
 a:visited
   color: inherit
   text-decoration: none
-  
+
 p
   a
     text-decoration: underline
-  
-font-sizes($size-basic = 15px, $size-h1 = false, $size-h2 = false, $size-h3 = false, $size-h4 = false, $size-h5 = false, $size-h6 = false)
+
+font-sizes($size-basic = 15px, $modulator = 1)
 
   html
     font-size: $size-basic
-    
-  if ($size-h1) 
-    h1, .font-size-h1
-      font-size: $size-h1
-      
-  if ($size-h2) 
-    h2, .font-size-h2
-      font-size: $size-h2
-      
-  if ($size-h3) 
-    h3, .font-size-h3
-      font-size: $size-h3
-      
-  if ($size-h4) 
-    h4, .font-size-h4
-      font-size: $size-h4
-      
-  if ($size-h5) 
-    h5, .font-size-h5
-      font-size: $size-h5
-      
-  if ($size-h6) 
-    h6, .font-size-h6
-      font-size: $size-h6
+
+  $size-heading-small = $size-basic * (1.2 * $modulator)
+  $size-heading = $size-basic * (1.5 * $modulator)
+  $size-large = $size-basic * (1.6 * $modulator)
+  $size-larger = $size-basic * (3.5 * $modulator)
+  $size-massive = $size-basic * (10 * $modulator)
+
+  .font-size-heading-small
+    if $size-heading-small > ($size-basic + 1px)
+      font-size: $size-heading-small
+    else
+      font-size: ($size-basic + 1px)
+
+  .font-size-heading
+    if $size-heading > ($size-basic + 1px)
+      font-size: $size-heading
+    else
+      font-size: ($size-basic + 1px)
+
+  .font-size-large
+    font-size: $size-large
+
+  .font-size-larger
+    font-size: $size-larger
+
+  .font-size-massive
+    font-size: $size-massive
+
