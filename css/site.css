@@ -1469,6 +1469,24 @@ html {
   }
 }
 @media screen and (min-width: 1680px) {
+  html {
+    font-size: 16px;
+  }
+  .font-size-heading-small {
+    font-size: 19.2px;
+  }
+  .font-size-heading {
+    font-size: 24px;
+  }
+  .font-size-large {
+    font-size: 25.6px;
+  }
+  .font-size-larger {
+    font-size: 56px;
+  }
+  .font-size-massive {
+    font-size: 160px;
+  }
   .container {
     width: 1600px;
   }
