@@ -17,9 +17,9 @@ if( have_posts() ) {
 
         <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-          <div class="grid-row">
+          <div class="grid-row margin-bottom-mid">
 
-            <div class="grid-item item-s-4 font-uppercase">
+            <div class="grid-item item-s-12 item-m-4 font-uppercase margin-bottom-small">
               <h1 class="font-family-heading font-size-heading-small"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 <?php
     if (!empty($cats)) {
@@ -38,7 +38,7 @@ if( have_posts() ) {
 ?>
             </div>
 
-            <div class="grid-item item-s-8" id="work-content"><?php the_content(); ?></div>
+            <div class="grid-item item-s-12 item-m-8" id="work-content"><?php the_content(); ?></div>
 
           </div>
 
@@ -52,9 +52,9 @@ if( have_posts() ) {
         $image = wp_get_attachment_image($image_id, 'gallery');
         $caption = $attachment->post_excerpt;
 ?>
-            <div class="grid-item item-s-12 work-gallery-image">
+            <div class="work-gallery-image grid-item item-s-12 margin-bottom-small">
               <?php echo $image; ?>
-              <div class="text-align-center"><?php echo $caption; ?></div>
+              <div class="text-align-center margin-top-tiny"><?php echo $caption; ?></div>
             </div>
 <?php
       }
