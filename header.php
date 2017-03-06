@@ -27,9 +27,9 @@
 
 <section id="main-container">
 
-<header id="header" class="container font-uppercase">
+<header id="header" class="container font-uppercase padding-top-small padding-bottom-small">
   <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
-  <nav class="text-align-center">
+  <nav id="main-nav" class="text-align-center">
     <ul class="u-inline-list font-family-heading font-size-larger">
       <li><a href="<?php echo home_url(); ?>">Work</a></li>
       <li><a href="<?php echo home_url('/info'); ?>">Info</a></li>
@@ -46,7 +46,7 @@
 <?php
   if (is_page('info')) {
 ?>
-    <nav class="text-align-center">
+    <nav id="info-nav" class="text-align-center">
       <ul class="u-inline-list">
         <li><a href="#about">About</a></li>
         <li><a href="#clientes">Clientes</a></li>
