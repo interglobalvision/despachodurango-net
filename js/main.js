@@ -38,6 +38,7 @@ Site.Info = {
     var _this = this;
 
     _this.bindNavScroll();
+    _this.layoutTeam();
   },
 
   bindNavScroll: function() {
@@ -55,6 +56,16 @@ Site.Info = {
         scrollTop: sectionTop - headerHeight,
       });
     })
+  },
+
+  layoutTeam: function() {
+    var $team = $('.js-masonry').masonry({
+      transitionDuration: 0,
+    });
+
+    $('.js-masonry').imagesLoaded(function() {
+      $team.masonry('layout');
+    });
   }
 }
 
