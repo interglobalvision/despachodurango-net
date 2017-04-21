@@ -15,22 +15,26 @@ if( have_posts() ) {
     $collaborators = get_post_meta($post->ID, '_igv_collaborator_group', true);
     $clients = get_post_meta($post->ID, '_igv_client_group', true);
     $services = get_post_meta($post->ID, '_igv_service_group', true);
-    $contact = get_post_meta($post->ID, '_igv_contact', true);
+    $address = get_post_meta($post->ID, '_igv_contact_address', true);
+    $phone = get_post_meta($post->ID, '_igv_contact_phone', true);
+    $email = get_post_meta($post->ID, '_igv_contact_email', true);
+    $map = get_post_meta($post->ID, '_igv_contact_map', true);
 ?>
-      <section class="grid-row">
-        <div class="grid-item item-m-4">
+      <section class="grid-row padding-top-mid padding-bottom-mid">
+        <div class="grid-item item-s-12 item-l-4">
           <h2 class="font-family-heading font-uppercase font-size-heading">About</h2>
         </div>
-        <div class="grid-item item-m-8">
+        <div class="grid-item item-s-12 item-l-8 text-cols text-col-count-s-1 text-col-count-m-2">
           <?php the_content(); ?>
         </div>
       </section>
 
+      <section class="grid-row padding-top-mid padding-bottom-mid section-border-bottom">
     <?php
     if (!empty($team)) {
     ?>
 
-      <section class="grid-row">
+
 
       <?php
       foreach ($team as $teammate) {
@@ -38,7 +42,7 @@ if( have_posts() ) {
         $teammate_name = $teammate['_igv_teammate_name'];
         $teammate_description = apply_filters('the_content', $teammate['_igv_teammate_description']);
       ?>
-        <div class="grid-item item-m-4">
+        <div class="grid-item item-s-12 item-m-6 item-l-4">
           <?php echo $teammate_picture; ?>
           <h3 class="font-family-heading font-uppercase font-size-heading"><?php echo $teammate_name; ?></h3>
           <?php echo $teammate_description; ?>
@@ -47,8 +51,6 @@ if( have_posts() ) {
       }
       ?>
 
-      </section>
-
     <?php
     }
     ?>
@@ -56,10 +58,13 @@ if( have_posts() ) {
     <?php
     if (!empty($collaborators)) {
     ?>
-      <section>
-        <div class="grid-item item-m-4">
-          <h2 class="font-family-heading font-uppercase font-size-heading">Colaboradores</h2>
-          <ul>
+        <div class="grid-item item-s-12 item-m-6 item-l-4 no-gutter">
+          <div class="grid-row">
+            <div class="grid-item item-s-12">
+              <h2 class="font-family-heading font-uppercase font-size-heading">Colaboradores</h2>
+            </div>
+            <div class="grid-item item-s-12 no-gutter">
+              <ul class="grid-row">
 
       <?php
       foreach ($collaborators as $collaborator) {
@@ -67,8 +72,8 @@ if( have_posts() ) {
         $collaborator_name = $collaborator['_igv_collaborator_name'];
         $collaborator_role = $collaborator['_igv_collaborator_role'];
       ?>
-            <li>
-              <p><?php echo $collaborator_picture; ?></p>
+            <li class="grid-item item-s-6">
+              <?php echo $collaborator_picture; ?>
               <h3 class="font-family-heading font-size-heading-small"><?php echo $collaborator_name; ?></h3>
               <p><?php echo $collaborator_role; ?></p>
             </li>
@@ -76,23 +81,27 @@ if( have_posts() ) {
       }
       ?>
 
-          </ul>
+              </ul>
+            </div>
+          </div>
         </div>
-      </section>
+
 
     <?php
     }
     ?>
 
+    </section>
+
     <?php
     if (!empty($clients)) {
     ?>
-      <section class="grid-row">
-        <div class="grid-item item-m-4">
+      <section class="grid-row padding-top-mid padding-bottom-mid section-border-bottom">
+        <div class="grid-item item-s-12 item-l-4">
           <h2 class="font-family-heading font-uppercase font-size-heading">Clientes</h2>
         </div>
-        <div class="grid-item item-m-8">
-          <ul>
+        <div class="grid-item item-s-12 item-l-8">
+          <ul class="text-cols text-col-count-s-2 text-col-count-m-4 text-cols-no-break">
 
       <?php
       foreach ($clients as $client) {
@@ -114,12 +123,12 @@ if( have_posts() ) {
     <?php
     if (!empty($services)) {
     ?>
-      <section class="grid-row">
-        <div class="grid-item item-m-4">
+      <section class="grid-row padding-top-mid padding-bottom-mid section-border-bottom">
+        <div class="grid-item item-s-12 item-l-4">
           <h2 class="font-family-heading font-uppercase font-size-heading">Servicios</h2>
         </div>
-        <div class="grid-item item-m-8">
-          <ul>
+        <div class="grid-item item-s-12 item-l-8">
+          <ul class="text-cols text-col-count-s-1 text-col-count-m-2 text-cols-no-break">
 
       <?php
       foreach ($services as $service) {
@@ -143,16 +152,43 @@ if( have_posts() ) {
     ?>
 
     <?php
-    if (!empty($contact)) {
+    if (!empty($address) || !empty($phone) || !empty($email) || !empty($map)) {
     ?>
-      <section class="grid-row">
-        <div class="grid-item item-m-12">
+      <section class="grid-row padding-top-mid padding-bottom-mid section-border-bottom">
+        <div class="grid-item item-s-12 item-l-4">
           <h2 class="font-family-heading font-uppercase font-size-heading">Contacto</h2>
-        <?php
-        echo apply_filters('the_content', $contact);
-        ?>
         </div>
-
+        <div id="contact" class="grid-item item-s-12 item-l-3">
+          <?php
+          if (!empty($address)) {
+          ?>
+            <h3 class="font-family-heading font-uppercase">Dirección</h3>
+            <?php echo apply_filters('the_content', $address); ?>
+          <?php
+          }
+          if (!empty($phone)) {
+          ?>
+            <h3 class="font-family-heading font-uppercase">Teléfono</h3>
+            <p><a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></p>
+          <?php
+          }
+          if (!empty($email)) {
+          ?>
+            <h3 class="font-family-heading font-uppercase">Mail</h3>
+            <p><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
+          <?php
+          }
+          ?>
+        </div>
+    <?php
+      if (!empty($map)) {
+    ?>
+        <div id="contact-map" class="grid-item item-s-12 item-l-5">
+          <?php echo $map; ?>
+        </div>
+    <?php
+      }
+    ?>
       </section>
 
     <?php
