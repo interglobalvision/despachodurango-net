@@ -29,7 +29,7 @@ if( have_posts() ) {
         </div>
       </section>
 
-      <section class="grid-row padding-top-mid padding-bottom-mid section-border-bottom js-masonry">
+      <section id="team-holder" class="grid-row padding-top-mid padding-bottom-mid section-border-bottom js-masonry">
     <?php
     if (!empty($team)) {
     ?>
@@ -42,7 +42,7 @@ if( have_posts() ) {
         $teammate_name = $teammate['_igv_teammate_name'];
         $teammate_description = apply_filters('the_content', $teammate['_igv_teammate_description']);
       ?>
-        <div class="grid-item item-s-12 item-m-6 item-l-4">
+        <div class="grid-item item-s-12 item-m-6">
           <?php echo $teammate_picture; ?>
           <h3 class="font-family-heading font-uppercase font-size-heading"><?php echo $teammate_name; ?></h3>
           <?php echo $teammate_description; ?>
@@ -58,7 +58,7 @@ if( have_posts() ) {
     <?php
     if (!empty($collaborators)) {
     ?>
-        <div class="grid-item item-s-12 item-m-6 item-l-4 no-gutter">
+        <div class="grid-item item-s-12 item-m-6 no-gutter">
           <div class="grid-row">
             <div class="grid-item item-s-12">
               <h2 class="font-family-heading font-uppercase font-size-heading margin-bottom-small">Colaboradores</h2>
@@ -72,11 +72,11 @@ if( have_posts() ) {
         $collaborator_name = $collaborator['_igv_collaborator_name'];
         $collaborator_role = $collaborator['_igv_collaborator_role'];
       ?>
-            <li class="grid-item item-s-6">
-              <?php echo $collaborator_picture; ?>
-              <h3 class="font-family-heading font-size-heading-small"><?php echo $collaborator_name; ?></h3>
-              <p><?php echo $collaborator_role; ?></p>
-            </li>
+                <li class="grid-item item-s-6">
+                  <?php echo $collaborator_picture; ?>
+                  <h3 class="font-family-heading font-size-heading-small"><?php echo $collaborator_name; ?></h3>
+                  <p><?php echo $collaborator_role; ?></p>
+                </li>
       <?php
       }
       ?>
