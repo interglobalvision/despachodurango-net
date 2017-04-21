@@ -1696,6 +1696,18 @@ body.page-info #main-content {
     -moz-column-gap: 24px;
     column-gap: 24px;
   }
+  #team-holder > div:nth-child(1) {
+    padding: 40% 17% 0 0;
+  }
+  #team-holder > div:nth-child(2) {
+    padding: 0 5% 0 12%;
+  }
+  #team-holder > div:nth-child(3) {
+    padding: 10% 12% 0 5%;
+  }
+  #team-holder > div:nth-child(4) {
+    padding: 5% 17% 0 0;
+  }
 }
 @media screen and (min-width: 1280px) {
   html {
