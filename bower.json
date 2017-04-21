@@ -16,6 +16,22 @@
   ],
   "dependencies": {
     "lazysizes": "^2.0.4",
-    "masonry": "^4.2.0"
+    "imagesloaded": "^4.1.1",
+    "masonry": "^4.2.0",
+    "jquery-bridget": "^2.0.1",
+    "waitForImages": "^2.2.0"
+  },
+  "overrides": {
+    "ev-emitter": {
+      "dependencies": {
+        "jquery-bridget": "~2.0.0"
+      }
+    },
+    "outlayer": {
+      "main": [
+        "item.js",
+        "outlayer.js"
+      ]
+    }
   }
 }
