@@ -256,9 +256,31 @@ function igv_cmb_metaboxes() {
     ) );
 
     $contact_group_id = $contact_meta->add_field( array(
-      'id'         => $prefix . 'contact',
+      'name'      => esc_html__( 'Address', 'cmb2' ),
+      'id'         => $prefix . 'contact_address',
       'desc'       => esc_html__( '', 'cmb2' ),
-      'type'       => 'wysiwyg',
+      'type'       => 'textarea',
+    ) );
+
+    $contact_group_id = $contact_meta->add_field( array(
+      'name'      => esc_html__( 'Phone', 'cmb2' ),
+      'id'         => $prefix . 'contact_phone',
+      'desc'       => esc_html__( '', 'cmb2' ),
+      'type'       => 'text',
+    ) );
+
+    $contact_group_id = $contact_meta->add_field( array(
+      'name'      => esc_html__( 'Email', 'cmb2' ),
+      'id'         => $prefix . 'contact_email',
+      'desc'       => esc_html__( '', 'cmb2' ),
+      'type'       => 'text',
+    ) );
+
+    $contact_group_id = $contact_meta->add_field( array(
+      'name'      => esc_html__( 'Map Embed Code', 'cmb2' ),
+      'id'         => $prefix . 'contact_map',
+      'desc'       => esc_html__( '', 'cmb2' ),
+      'type'       => 'textarea_code',
     ) );
   }
 
