@@ -22,14 +22,14 @@ if( have_posts() ) {
 ?>
       <section id="about" class="grid-row padding-top-mid padding-bottom-mid">
         <div class="grid-item item-s-12 item-l-4">
-          <h2 class="font-family-heading font-uppercase font-size-heading">About</h2>
+          <h2 class="font-family-heading font-uppercase font-size-heading margin-bottom-small">About</h2>
         </div>
         <div class="grid-item item-s-12 item-l-8 text-cols text-col-count-s-1 text-col-count-m-2">
           <?php the_content(); ?>
         </div>
       </section>
 
-      <section class="grid-row padding-top-mid padding-bottom-mid section-border-bottom">
+      <section class="grid-row padding-top-mid padding-bottom-mid section-border-bottom js-masonry">
     <?php
     if (!empty($team)) {
     ?>
@@ -38,7 +38,7 @@ if( have_posts() ) {
 
       <?php
       foreach ($team as $teammate) {
-        $teammate_picture = wp_get_attachment_image($teammate['_igv_teammate_picture_id'], 'some-size'); // TODO: Change image size
+        $teammate_picture = wp_get_attachment_image($teammate['_igv_teammate_picture_id'], 'some-size', false,  array('data-no-lazysizes'=>''));
         $teammate_name = $teammate['_igv_teammate_name'];
         $teammate_description = apply_filters('the_content', $teammate['_igv_teammate_description']);
       ?>
@@ -61,7 +61,7 @@ if( have_posts() ) {
         <div class="grid-item item-s-12 item-m-6 item-l-4 no-gutter">
           <div class="grid-row">
             <div class="grid-item item-s-12">
-              <h2 class="font-family-heading font-uppercase font-size-heading">Colaboradores</h2>
+              <h2 class="font-family-heading font-uppercase font-size-heading margin-bottom-small">Colaboradores</h2>
             </div>
             <div class="grid-item item-s-12 no-gutter">
               <ul class="grid-row">
@@ -98,7 +98,7 @@ if( have_posts() ) {
     ?>
       <section id="clients" class="grid-row padding-top-mid padding-bottom-mid section-border-bottom">
         <div class="grid-item item-s-12 item-l-4">
-          <h2 class="font-family-heading font-uppercase font-size-heading">Clientes</h2>
+          <h2 class="font-family-heading font-uppercase font-size-heading margin-bottom-small">Clientes</h2>
         </div>
         <div class="grid-item item-s-12 item-l-8">
           <ul class="text-cols text-col-count-s-2 text-col-count-m-4 text-cols-no-break">
@@ -125,7 +125,7 @@ if( have_posts() ) {
     ?>
       <section id="services" class="grid-row padding-top-mid padding-bottom-mid section-border-bottom">
         <div class="grid-item item-s-12 item-l-4">
-          <h2 class="font-family-heading font-uppercase font-size-heading">Servicios</h2>
+          <h2 class="font-family-heading font-uppercase font-size-heading margin-bottom-small">Servicios</h2>
         </div>
         <div class="grid-item item-s-12 item-l-8">
           <ul class="text-cols text-col-count-s-1 text-col-count-m-2 text-cols-no-break">
@@ -156,9 +156,9 @@ if( have_posts() ) {
     ?>
       <section id="contact" class="grid-row padding-top-mid padding-bottom-mid section-border-bottom">
         <div class="grid-item item-s-12 item-l-4">
-          <h2 class="font-family-heading font-uppercase font-size-heading">Contacto</h2>
+          <h2 class="font-family-heading font-uppercase font-size-heading margin-bottom-small">Contacto</h2>
         </div>
-        <div class="grid-item item-s-12 item-l-3">
+        <div class="grid-item item-s-12 item-m-4 item-l-3">
           <?php
           if (!empty($address)) {
           ?>
@@ -183,7 +183,7 @@ if( have_posts() ) {
     <?php
       if (!empty($map)) {
     ?>
-        <div id="contact-map" class="grid-item item-s-12 item-l-5">
+        <div id="contact-map" class="grid-item item-s-12 item-m-8 item-l-5">
           <?php echo $map; ?>
         </div>
     <?php
