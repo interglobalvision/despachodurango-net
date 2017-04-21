@@ -48,10 +48,10 @@
 ?>
     <nav id="info-nav" class="text-align-center">
       <ul class="u-inline-list">
-        <li><a href="#about">About</a></li>
-        <li><a href="#clientes">Clientes</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a class="u-pointer" data-section="about">About</a></li>
+        <li><a class="u-pointer" data-section="clients">Clientes</a></li>
+        <li><a class="u-pointer" data-section="services">Servicios</a></li>
+        <li><a class="u-pointer" data-section="contact">Contacto</a></li>
       </ul>
     </nav>
 <?php

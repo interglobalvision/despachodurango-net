@@ -20,7 +20,7 @@ if( have_posts() ) {
     $email = get_post_meta($post->ID, '_igv_contact_email', true);
     $map = get_post_meta($post->ID, '_igv_contact_map', true);
 ?>
-      <section class="grid-row padding-top-mid padding-bottom-mid">
+      <section id="about" class="grid-row padding-top-mid padding-bottom-mid">
         <div class="grid-item item-s-12 item-l-4">
           <h2 class="font-family-heading font-uppercase font-size-heading">About</h2>
         </div>
@@ -96,7 +96,7 @@ if( have_posts() ) {
     <?php
     if (!empty($clients)) {
     ?>
-      <section class="grid-row padding-top-mid padding-bottom-mid section-border-bottom">
+      <section id="clients" class="grid-row padding-top-mid padding-bottom-mid section-border-bottom">
         <div class="grid-item item-s-12 item-l-4">
           <h2 class="font-family-heading font-uppercase font-size-heading">Clientes</h2>
         </div>
@@ -123,7 +123,7 @@ if( have_posts() ) {
     <?php
     if (!empty($services)) {
     ?>
-      <section class="grid-row padding-top-mid padding-bottom-mid section-border-bottom">
+      <section id="services" class="grid-row padding-top-mid padding-bottom-mid section-border-bottom">
         <div class="grid-item item-s-12 item-l-4">
           <h2 class="font-family-heading font-uppercase font-size-heading">Servicios</h2>
         </div>
@@ -154,11 +154,11 @@ if( have_posts() ) {
     <?php
     if (!empty($address) || !empty($phone) || !empty($email) || !empty($map)) {
     ?>
-      <section class="grid-row padding-top-mid padding-bottom-mid section-border-bottom">
+      <section id="contact" class="grid-row padding-top-mid padding-bottom-mid section-border-bottom">
         <div class="grid-item item-s-12 item-l-4">
           <h2 class="font-family-heading font-uppercase font-size-heading">Contacto</h2>
         </div>
-        <div id="contact" class="grid-item item-s-12 item-l-3">
+        <div class="grid-item item-s-12 item-l-3">
           <?php
           if (!empty($address)) {
           ?>

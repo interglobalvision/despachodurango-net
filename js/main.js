@@ -11,7 +11,9 @@ Site = {
     });
 
     $(document).ready(function () {
-
+      if ($('body').hasClass('page-info')) {
+        _this.Info.init();
+      }
     });
 
   },
@@ -30,5 +32,30 @@ Site = {
     });
   },
 };
+
+Site.Info = {
+  init: function() {
+    var _this = this;
+
+    _this.bindNavScroll();
+  },
+
+  bindNavScroll: function() {
+    var $navItem = $('#info-nav a');
+
+    $navItem.on('click', function(event) {
+      event.preventDefault();
+
+      var sectionId = $(this).attr('data-section');
+      var $section = $('#' + sectionId);
+      var sectionTop = $section.offset().top;
+      var headerHeight = $('#header').outerHeight(true);
+
+      $('html, body').stop().animate({
+        scrollTop: sectionTop - headerHeight,
+      });
+    })
+  }
+}
 
 Site.init();
