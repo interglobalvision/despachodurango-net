@@ -21,6 +21,9 @@ Site = {
   onResize: function() {
     var _this = this;
 
+    if (_this.Info.$team.length) {
+      _this.Info.$team.masonry('layout');
+    }
   },
 
   fixWidows: function() {
@@ -59,12 +62,14 @@ Site.Info = {
   },
 
   layoutTeam: function() {
-    var $team = $('.js-masonry').masonry({
+    var _this = this;
+
+    _this.$team = $('.js-masonry').masonry({
       transitionDuration: 0,
     });
 
     $('.js-masonry').imagesLoaded(function() {
-      $team.masonry('layout');
+      _this.$team.masonry('layout');
     });
   }
 }
