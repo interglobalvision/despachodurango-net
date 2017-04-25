@@ -38,7 +38,7 @@ if( have_posts() ) {
 
       <?php
       foreach ($team as $teammate) {
-        $teammate_picture = wp_get_attachment_image($teammate['_igv_teammate_picture_id'], 'some-size', false,  array('data-no-lazysizes'=>''));
+        $teammate_picture = wp_get_attachment_image($teammate['_igv_teammate_picture_id'], 'item-l-4', false,  array('data-no-lazysizes'=>true));
         $teammate_name = $teammate['_igv_teammate_name'];
         $teammate_description = apply_filters('the_content', $teammate['_igv_teammate_description']);
       ?>
