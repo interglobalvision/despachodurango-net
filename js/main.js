@@ -21,7 +21,7 @@ Site = {
   onResize: function() {
     var _this = this;
 
-    if (_this.Info.$team.length) {
+    if (_this.Info.teamExists) {
       _this.Info.$team.masonry('layout');
     }
   },
@@ -37,6 +37,8 @@ Site = {
 };
 
 Site.Info = {
+  teamExists: false,
+
   init: function() {
     var _this = this;
 
@@ -64,13 +66,16 @@ Site.Info = {
   layoutTeam: function() {
     var _this = this;
 
-    _this.$team = $('.js-masonry').masonry({
-      transitionDuration: 0,
-    });
+    if ($('.js-masonry').length) {
+      _this.$team = $('.js-masonry').masonry({
+        transitionDuration: 0,
+      });
 
-    $('.js-masonry').imagesLoaded(function() {
-      _this.$team.masonry('layout');
-    });
+      $('.js-masonry').imagesLoaded(function() {
+        _this.teamExists = true;
+        _this.$team.masonry('layout');
+      });
+    }
   }
 }
 
