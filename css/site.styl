@@ -35,6 +35,7 @@ box-sizing-reset()
 $color-black = rgb(0, 0, 0)
 $color-white = rgb(255, 255, 255)
 $color-white-trans = rgba(255, 255, 255, .9)
+$color-grey = rgb(200, 200, 200)
 
 // ******************************************************
 
@@ -54,6 +55,16 @@ img
 .desktop-only
   display: none !important
 
+.text-cols-no-break
+  li, p
+    -webkit-column-break-inside: avoid
+    page-break-inside: avoid
+    break-inside: avoid-column
+    display: table
+
+.section-border-bottom
+  border-bottom: 1px solid $color-grey
+
 // ******************************************************
 
 // HEADER
@@ -65,6 +76,15 @@ img
   left: 0
   width: 100%
   z-index: 900
+
+// ******************************************************
+
+// INFO
+
+#contact-map
+  iframe
+    width: 100%
+    filter: saturate(0)
 
 // ******************************************************
 
