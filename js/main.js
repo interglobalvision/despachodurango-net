@@ -24,7 +24,13 @@ Site = {
   onResize: function() {
     var _this = this;
 
+    if (_this.Home.workExists) {
+      // layout masonry, refresh skrollr via masonry layout callback
+      _this.Home.$work.masonry('layout');
+    }
+
     if (_this.Info.teamExists) {
+      // layout masonry
       _this.Info.$team.masonry('layout');
     }
   },
@@ -52,9 +58,9 @@ Site.Home = {
 
   initSkrollr: function() {
     var _this = this;
-    
+
     _this.skrollr = skrollr.init({
-      forceHeight: false
+      forceHeight: false // idk why but this helps
     });
   },
 
@@ -63,9 +69,10 @@ Site.Home = {
 
     if ($('.js-masonry').length) {
       _this.$work = $('.js-masonry').masonry({
-        transitionDuration: 0,
+        transitionDuration: 0, // no fucking animations :<
       });
 
+      // masonry layout callback
       _this.$work.on( 'layoutComplete',
         function( event, laidOutItems ) {
           _this.skrollr.refresh();
@@ -74,7 +81,7 @@ Site.Home = {
       );
 
       $('.js-masonry').imagesLoaded(function() {
-        _this.workExists = true;
+        _this.workExists = true; // for resize handler
         _this.$work.masonry('layout');
       });
     }
@@ -83,11 +90,13 @@ Site.Home = {
   bindImageHover: function() {
     $('.home-work-image').hover(
       function() {
+        // z-index item to top, hide image, show text details
         $(this).closest('.home-work-item').css('z-index',100);
         $(this).css('opacity',0);
         $(this).siblings('.home-work-details').css('opacity',1);
       },
       function() {
+        // clear z-index, show image, hide text details
         $(this).closest('.home-work-item').css('z-index','initial');
         $(this).css('opacity',1);
         $(this).siblings('.home-work-details').css('opacity',0);
@@ -132,7 +141,7 @@ Site.Info = {
       });
 
       $('.js-masonry').imagesLoaded(function() {
-        _this.teamExists = true;
+        _this.teamExists = true; // for resize handler
         _this.$team.masonry('layout');
       });
     }
