@@ -40,11 +40,11 @@ if( have_posts() ) {
           $work_title = get_the_title($work['work_id']);
           $work_cats = get_the_category($work['work_id']);
 
-          $trans_y = (rand(-10,10) / 10) * 50;
-          $trans_x = (rand(-10,10) / 10) * 50;
+          $trans_y = (mt_rand(-10,10) / 10) * 50;
+          $trans_x = (mt_rand(-10,10) / 10) * 50;
 
-          $margin_top = rand(1,4) * 50;
-          $margin_left = rand(-2,2) * 50;
+          $margin_top = mt_rand(1,4) * 50;
+          $margin_left = mt_rand(-2,2) * 50;
           $margin = $margin_top . 'px 0 0 ' . $margin_left . 'px';
 ?>
 
