@@ -60,7 +60,8 @@ Site.Home = {
     var _this = this;
 
     _this.skrollr = skrollr.init({
-      forceHeight: false // idk why but this helps
+      forceHeight: false, // idk why but this helps
+      mobileDeceleration:0.004
     });
   },
 
