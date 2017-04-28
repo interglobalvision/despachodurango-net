@@ -3,8 +3,9 @@ get_header();
 ?>
 
 <main id="main-content">
+  <div id="skrollr-body">
   <section id="posts">
-    <div id="skrollr-body" class="container">
+    <div class="container">
 
 <?php
 if( have_posts() ) {
@@ -77,9 +78,6 @@ if( have_posts() ) {
 ?>
 
         </div>
-
-        <div id="saturation-filter"></div>
-
 <?php
     }
 ?>
@@ -94,11 +92,15 @@ if( have_posts() ) {
 <?php
 } ?>
 
-      </div>
     </div>
+
   </section>
+  <?php get_template_part('partials/footer'); ?>
+</div>
 
 </main>
+
+<div id="saturation-filter"></div>
 
 <?php
 get_footer();
