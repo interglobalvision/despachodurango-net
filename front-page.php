@@ -43,7 +43,7 @@ if( have_posts() ) {
           $trans_y = (rand(-10,10) / 10) * 50;
           $trans_x = (rand(-10,10) / 10) * 50;
 
-          $margin_top = rand(0,3) * 50;
+          $margin_top = rand(1,4) * 50;
           $margin_left = rand(-2,2) * 50;
           $margin = $margin_top . 'px 0 0 ' . $margin_left . 'px';
 ?>
