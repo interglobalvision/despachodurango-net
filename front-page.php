@@ -47,11 +47,17 @@ if( have_posts() ) {
           $margin_top = mt_rand(1,4) * 50;
           $margin_left = mt_rand(-2,2) * 50;
           $margin = $margin_top . 'px 0 0 ' . $margin_left . 'px';
+
+          $scale_start = IGV_get_option('_igv_site_options', '_igv_scale_start');
+          $scale_end = IGV_get_option('_igv_site_options', '_igv_scale_end');
+
+          $scale_start = !empty($scale_start) ? $scale_start : 0.7;
+          $scale_end = !empty($scale_end) ? $scale_end : 1;
 ?>
 
           <a class="home-work-item grid-item item-s-12 item-m-6 item-l-4" href="<?php echo $work_url; ?>"
-            data-0-bottom-top="transform[sqrt]: translateY(<?php echo -($trans_y); ?>%) translateX(<?php echo -($trans_x); ?>%) scale(.7);"
-            data-0-top-bottom="transform[sqrt]: translateY(<?php echo $trans_y; ?>%) translateX(<?php echo $trans_x; ?>%) scale(1);">
+            data-0-bottom-top="transform[sqrt]: translateY(<?php echo -($trans_y); ?>%) translateX(<?php echo -($trans_x); ?>%) scale(<?php echo $scale_start; ?>);"
+            data-0-top-bottom="transform[sqrt]: translateY(<?php echo $trans_y; ?>%) translateX(<?php echo $trans_x; ?>%) scale(<?php echo $scale_end; ?>);">
             <div class="home-work-contents-holder" style="margin: <?php echo $margin; ?>">
               <div class="home-work-contents text-align-center">
 

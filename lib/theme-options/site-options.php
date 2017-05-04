@@ -30,6 +30,29 @@ $metabox = array(
       'type' => 'file',
     ),
 
+    // HOME OPTIONS
+
+    array(
+      'name' => __( 'Home Options', 'cmb2' ),
+      'desc' => __( '', 'cmb2' ),
+      'id'   => $prefix . 'home_options',
+      'type' => 'title',
+    ),
+
+    array(
+      'name' => __( 'Home Image Starting Scale', 'IGV' ),
+      'desc' => __( '0.6 - 1.0', 'IGV' ),
+      'id'   => $prefix . 'scale_start',
+      'type' => 'text_small',
+    ),
+
+    array(
+      'name' => __( 'Home Image Ending Scale', 'IGV' ),
+      'desc' => __( '0.6 - 1.0', 'IGV' ),
+      'id'   => $prefix . 'scale_end',
+      'type' => 'text_small',
+    ),
+
     // SOCIAL OPTIONS
 
     array(
