@@ -41,14 +41,14 @@ $metabox = array(
 
     array(
       'name' => __( 'Home Image Starting Scale', 'IGV' ),
-      'desc' => __( '0.6 - 1.0', 'IGV' ),
+      'desc' => __( '0.7 - 1.0', 'IGV' ),
       'id'   => $prefix . 'scale_start',
       'type' => 'text_small',
     ),
 
     array(
       'name' => __( 'Home Image Ending Scale', 'IGV' ),
-      'desc' => __( '0.6 - 1.0', 'IGV' ),
+      'desc' => __( '0.7 - 1.0', 'IGV' ),
       'id'   => $prefix . 'scale_end',
       'type' => 'text_small',
     ),
