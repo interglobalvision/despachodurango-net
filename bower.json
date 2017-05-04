@@ -19,7 +19,8 @@
     "imagesloaded": "^4.1.1",
     "masonry": "^4.2.0",
     "jquery-bridget": "^2.0.1",
-    "waitForImages": "^2.2.0"
+    "waitForImages": "^2.2.0",
+    "skrollr": "^0.6.30"
   },
   "overrides": {
     "ev-emitter": {

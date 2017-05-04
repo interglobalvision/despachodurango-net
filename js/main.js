@@ -1,5 +1,5 @@
 /* jshint browser: true, devel: true, indent: 2, curly: true, eqeqeq: true, futurehostile: true, latedef: true, undef: true, unused: true */
-/* global $, jQuery, document, Site, Modernizr */
+/* global $, jQuery, document, Site, Modernizr, skrollr */
 
 Site = {
   mobileThreshold: 601,
@@ -11,6 +11,9 @@ Site = {
     });
 
     $(document).ready(function () {
+      if ($('body').hasClass('page-home')) {
+        _this.Home.init();
+      }
       if ($('body').hasClass('page-info')) {
         _this.Info.init();
       }
@@ -21,7 +24,13 @@ Site = {
   onResize: function() {
     var _this = this;
 
+    if (_this.Home.workExists) {
+      // layout masonry, refresh skrollr via masonry layout callback
+      _this.Home.$work.masonry('layout');
+    }
+
     if (_this.Info.teamExists) {
+      // layout masonry
       _this.Info.$team.masonry('layout');
     }
   },
@@ -34,6 +43,68 @@ Site = {
       $(this).html(string);
     });
   },
+};
+
+Site.Home = {
+  workExists: false,
+
+  init: function() {
+    var _this = this;
+
+    _this.layoutWork();
+    _this.bindImageHover();
+    _this.initSkrollr();
+  },
+
+  initSkrollr: function() {
+    var _this = this;
+
+    _this.skrollr = skrollr.init({
+      forceHeight: false, // or else skrollr sets a body height
+      smoothScrolling: false, // improves mobile performance
+      mobileDeceleration:0.004 // improves mobile performance
+    });
+  },
+
+  layoutWork: function() {
+    var _this = this;
+
+    if ($('.js-masonry').length) {
+      _this.$work = $('.js-masonry').masonry({
+        transitionDuration: 0, // no fucking animations :<
+      });
+
+      // masonry layout callback
+      _this.$work.on( 'layoutComplete',
+        function() {
+          _this.skrollr.refresh();
+          $('.home-work-item').css('opacity',1);
+        }
+      );
+
+      $('.js-masonry').imagesLoaded(function() {
+        _this.workExists = true; // for resize handler
+        _this.$work.masonry('layout');
+      });
+    }
+  },
+
+  bindImageHover: function() {
+    $('.home-work-image').hover(
+      function() {
+        // z-index item to top, hide image, show text details
+        $(this).closest('.home-work-item').css('z-index',100);
+        $(this).css('opacity',0);
+        $(this).siblings('.home-work-details').css('opacity',1);
+      },
+      function() {
+        // clear z-index, show image, hide text details
+        $(this).closest('.home-work-item').css('z-index','initial');
+        $(this).css('opacity',1);
+        $(this).siblings('.home-work-details').css('opacity',0);
+      }
+    );
+  }
 };
 
 Site.Info = {
@@ -60,7 +131,7 @@ Site.Info = {
       $('html, body').stop().animate({
         scrollTop: sectionTop - headerHeight,
       });
-    })
+    });
   },
 
   layoutTeam: function() {
@@ -72,11 +143,11 @@ Site.Info = {
       });
 
       $('.js-masonry').imagesLoaded(function() {
-        _this.teamExists = true;
+        _this.teamExists = true; // for resize handler
         _this.$team.masonry('layout');
       });
     }
   }
-}
+};
 
 Site.init();
