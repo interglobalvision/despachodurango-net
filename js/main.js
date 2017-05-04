@@ -1,5 +1,5 @@
 /* jshint browser: true, devel: true, indent: 2, curly: true, eqeqeq: true, futurehostile: true, latedef: true, undef: true, unused: true */
-/* global $, jQuery, document, Site, Modernizr */
+/* global $, jQuery, document, Site, Modernizr, skrollr */
 
 Site = {
   mobileThreshold: 601,
@@ -76,7 +76,7 @@ Site.Home = {
 
       // masonry layout callback
       _this.$work.on( 'layoutComplete',
-        function( event, laidOutItems ) {
+        function() {
           _this.skrollr.refresh();
           $('.home-work-item').css('opacity',1);
         }
@@ -131,7 +131,7 @@ Site.Info = {
       $('html, body').stop().animate({
         scrollTop: sectionTop - headerHeight,
       });
-    })
+    });
   },
 
   layoutTeam: function() {
@@ -148,6 +148,6 @@ Site.Info = {
       });
     }
   }
-}
+};
 
 Site.init();
