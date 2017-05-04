@@ -31,10 +31,10 @@ if( have_posts() ) {
       foreach ($works as $work) {
         if (!empty($work['work_id'])) {
 
-          $work_image = get_the_post_thumbnail($work['work_id'], 'full', false, array('data-no-lazysizes'=>true, 'class'=>'home-work-image'));
+          $work_image = get_the_post_thumbnail($work['work_id'], 'item-s-12', false, array('data-no-lazysizes'=>true, 'class'=>'home-work-image'));
 
           if (!empty($work['image_id'])) {
-            $work_image = wp_get_attachment_image($work['image_id'], 'full', false, array('data-no-lazysizes'=>true, 'class'=>'home-work-image'));
+            $work_image = wp_get_attachment_image($work['image_id'], 'item-s-12', false, array('data-no-lazysizes'=>true, 'class'=>'home-work-image'));
           }
 
           $work_url = get_the_permalink($work['work_id']);
