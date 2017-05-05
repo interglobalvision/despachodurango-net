@@ -656,7 +656,8 @@ img {
 #site-logo {
   display: block;
 }
-#site-logo path {
+#site-logo path,
+#site-logo polygon {
   fill: #000;
 }
 .container {
