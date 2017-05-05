@@ -2,7 +2,7 @@
 <?php
   $logo = IGV_get_option('_igv_site_options', '_igv_site_logo');
 ?>
-  <footer id="footer" class="container margin-top-small margin-bottom-small">
+  <footer id="footer" class="container margin-top-basic margin-bottom-basic">
     <div class="grid-row justify-between align-items-center">
       <div class="grid-item">
 <?php
