@@ -49,12 +49,6 @@ img
   max-width: 100%
   height: auto
 
-.mobile-only
-  display: initial !important
-
-.desktop-only
-  display: none !important
-
 .text-cols-no-break
   li, p
     -webkit-column-break-inside: avoid
@@ -124,6 +118,18 @@ img
 
 // ******************************************************
 
+// FOOTER
+
+#footer
+  line-height: 1
+
+#site-logo
+  display: block
+  path, polygon
+    fill: $color-black
+
+// ******************************************************
+
 // MEDIA QUERIES
 
 $gutter = 14px
@@ -165,7 +171,7 @@ font-sizes($font-size-basic, .65)
   font-sizes($font-size-basic, .7)
 
   .mobile-only
-    display: none !important
+    display: none
 
   @import 'responsive/tablet'
 
@@ -189,7 +195,7 @@ font-sizes($font-size-basic, .65)
   font-sizes($font-size-basic, .9)
 
   .desktop-only
-    display: initial !important
+    display: initial
 
   @import 'responsive/desktop'
 
