@@ -5,7 +5,7 @@ get_header();
 <main id="main-content">
   <div id="skrollr-body">
   <section id="posts">
-    <div class="container">
+    <div class="container section-border-bottom">
 
 <?php
 if( have_posts() ) {
