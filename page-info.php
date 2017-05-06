@@ -154,7 +154,7 @@ if( have_posts() ) {
     <?php
     if (!empty($address) || !empty($phone) || !empty($email) || !empty($map)) {
     ?>
-      <section id="contact" class="grid-row padding-top-mid padding-bottom-mid section-border-bottom">
+      <section id="contact" class="grid-row padding-top-mid padding-bottom-mid">
         <div class="grid-item item-s-12 item-l-4">
           <h2 class="font-family-heading font-uppercase font-size-heading margin-bottom-small">Contacto</h2>
         </div>
