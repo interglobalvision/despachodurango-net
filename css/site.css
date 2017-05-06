@@ -598,6 +598,9 @@ img {
   break-inside: avoid-column;
   display: table;
 }
+.section-border-top {
+  border-top: 1px solid #c8c8c8;
+}
 .section-border-bottom {
   border-bottom: 1px solid #c8c8c8;
 }
@@ -1729,6 +1732,7 @@ body.page-info #main-content {
   }
   #main-content {
     margin-top: 137px;
+    min-height: calc(100vh - 287px);
   }
   body.page-info #main-content {
     margin-top: 162px;
