@@ -106,16 +106,25 @@ p
     a
       text-decoration: none
 
-font-sizes($size-basic = 15px, $modulator = 1)
+font-sizes($size-basic = 15px, $modulator = 1, $size-heading-small = false, $size-heading = false, $size-large = false, $size-larger = false, $size-massive = false)
 
   html, .font-size-basic
     font-size: $size-basic
 
-  $size-heading-small = $size-basic * (1.2 * $modulator)
-  $size-heading = $size-basic * (1.5 * $modulator)
-  $size-large = $size-basic * (1.6 * $modulator)
-  $size-larger = $size-basic * (3.5 * $modulator)
-  $size-massive = $size-basic * (10 * $modulator)
+  unless $size-heading-small
+    $size-heading-small = $size-basic * (1.2 * $modulator)
+
+  unless $size-heading
+    $size-heading = $size-basic * (1.5 * $modulator)
+
+  unless $size-large
+    $size-large = $size-basic * (1.6 * $modulator)
+
+  unless $size-larger
+    $size-larger = $size-basic * (3.5 * $modulator)
+    
+  unless $size-massive
+    $size-massive = $size-basic * (10 * $modulator)
 
   .font-size-heading-small
     if $size-heading-small > ($size-basic + 1px)
