@@ -3,12 +3,15 @@
 $header-height = 82px
 $header-height-info = 105px
 
+$footer-height = 76px
+
 // ******************************************************
 
 // BASIC
 
 #main-content
   margin-top: $header-height
+  min-height: calc('100vh - ' + ($footer-height + $header-height))
 
 body.page-info
   #main-content
@@ -31,7 +34,6 @@ body.page-info
 // FOOTER
 
 #site-logo
-  height: 24px
-  margin-top: 1px
+  height: 16px
 
 // ******************************************************

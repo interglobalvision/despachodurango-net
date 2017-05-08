@@ -2,9 +2,9 @@
 get_header();
 ?>
 
-<main id="main-content">
+<main id="main-content" class="padding-bottom-mid">
   <section id="posts">
-    <div class="container section-border-bottom">
+    <div class="container">
 
 <?php
 if( have_posts() ) {
